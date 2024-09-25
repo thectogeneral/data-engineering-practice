@@ -1,12 +1,14 @@
-version: "3.9"
+version: '3'
+
 services:
   test:
-    image: "exercise-1"
+    build: . # Build the image from the Dockerfile in the current directory
     volumes:
       - .:/app
     command: python3 -m pytest
+
   run:
-    image: "exercise-1"
+    build: . # Build the image from the Dockerfile in the current directory
     volumes:
       - .:/app
     command: python3 main.py
