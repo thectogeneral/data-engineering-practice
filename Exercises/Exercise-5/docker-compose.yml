@@ -16,12 +16,12 @@ services:
         timeout: 5s
         retries: 5
     test:
-      image: "exercise-5"
+      build: .
       volumes:
         - .:/app
       command: python3 -m pytest
     run:
-      image: "exercise-5"
+      build: .
       depends_on:
         postgres:
           condition: service_healthy
